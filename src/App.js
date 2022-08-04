@@ -19,8 +19,8 @@ function App() {
       
       <BrowserRouter>
         <Switch>
-          <Route path='/home' component={SearchUser}></Route>
-          <Route path='/page-result-github' component={User}></Route>
+          <Route exact path='/' component={SearchUser}></Route>
+          <Route exact path='/page-result-github' component={User}></Route>
         </Switch>
       </BrowserRouter>
     </main>

@@ -4,30 +4,36 @@ import ContextRepo from '../context/ContextRepo';
 import { AiOutlineBook } from 'react-icons/ai';
 
 const Container = styled.div`
-max-width: 60vw;
-`
+  max-width: 60vw;
+  color: #575a5d;
+`;
 const Titulo = styled.h2`
-font-weight: bold;
-margin: 20px
+  font-weight: bold;
+  margin: 20px;
+  border-bottom: 1px solid orange;
 `;
 
 const ProjectName = styled.a`
-font-weight: bold;
-padding: 20px;
-`
-
+  font-weight: bold;
+  text-decoration: none;
+`;
 const Description = styled.p`
-padding: 10px;
-font-size: 13px;
-`
+  font-size: 13px;
+  margin-bottom: 15px;
+`;
 const P = styled.p`
-font-size: 13px;
-word-wrap:break-word;
-`
+  font-size: 13px;
+  word-wrap: break-word;
+`;
 
 const Card = styled.div`
-padding: 20px 0;
-border-bottom: 1px solid gray;
+  padding: 20px;
+  border-bottom: 1px solid gray;
+`;
+
+const Languages = styled.div`
+display:flex;
+justify-content: space-around;
 `
 
 function Repo() {
@@ -55,17 +61,22 @@ function Repo() {
       </Titulo>
       {repo &&
         repo.data.map((r, k) => (
-          <Card >
-            <ProjectName target='_blank' href={r.html_url} rel='noreferrer'>
-              {r.name}
-            </ProjectName>
+          <Card>
+            <div style={{ marginBottom: '10px' }}>
+              <ProjectName target='_blank' href={r.html_url} rel='noreferrer'>
+                {r.name}
+              </ProjectName>
+            </div>
             {r.fork && <P>{r.forks_url}</P>}
             {r.description && <Description>{r.description}</Description>}
-            <P>{r.language}</P>
             {r.license && <P>{r.license.name}</P>}
-            <P>{`Updated on ${r.updated_at.split('-')[2].slice(0, 2)} ${
-              Months[r.updated_at.split('-')[1] - 1]
-            }`}</P>
+            <Languages>
+              {r.language && <P> &#8226;{r.language}</P>}
+
+              <P>{`Updated on ${r.updated_at.split('-')[2].slice(0, 2)} ${
+                Months[r.updated_at.split('-')[1] - 1]
+              }`}</P>
+            </Languages>
           </Card>
         ))}
     </Container>

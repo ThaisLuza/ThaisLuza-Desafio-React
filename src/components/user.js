@@ -9,6 +9,7 @@ const Container = styled.div`
   display: flex;
   font-family: Arial, Helvetica, sans-serif;
   width: 100vw;
+  color:#575a5d;
 `;
 
 const Img = styled.img`
@@ -46,7 +47,7 @@ function User() {
   const [user, setUser] = useContext(ContextUser);
   console.log(user);
   useEffect(() => {
-    user.length === 0 && history.push('/home');
+    user.length === 0 && history.push('/');
   }, []);
   return (
     <Container>
