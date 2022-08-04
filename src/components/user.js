@@ -9,7 +9,8 @@ const Container = styled.div`
   display: flex;
   font-family: Arial, Helvetica, sans-serif;
   width: 100vw;
-  color:#575a5d;
+  color: #575a5d;
+  justify-content: center;
 `;
 
 const Img = styled.img`
@@ -17,12 +18,17 @@ const Img = styled.img`
   border-radius: 50%;
   margin-top: 20px;
   padding: 10px;
+  @media only screen and (min-width: 600px) {
+    height: 300px;
+    padding: 30px;
+  }
 `;
 
 const Name = styled.p`
   font-weight: bold;
   margin: 10px;
 `;
+
 const P = styled.p`
   font-size: 15px;
   margin: 10px;
