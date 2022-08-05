@@ -7,7 +7,7 @@ const Header = styled.header`
   weigth: 100%;
   background-color: #161b22;
   justify-content: space-between;
-`;
+  `;
 
 
 export default function HeaderTop() {

@@ -7,7 +7,6 @@ import {
   AiOutlineMail,
   AiOutlineTeam,
   AiOutlineEnvironment,
-  AiOutlineLink,
 } from 'react-icons/ai';
 
 const Container = styled.div`
@@ -97,12 +96,6 @@ function User() {
                 <AiOutlineMail /> {user.data.email}
               </P>
             )}
-            {/* {user.data.blog && (
-              <P>
-                {' '}
-                <AiOutlineLink /> {user.data.blog}
-              </P>
-            )} */}
           </div>
         )}
       </aside>
