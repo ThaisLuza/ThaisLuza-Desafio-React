@@ -98,6 +98,7 @@ function User() {
             )}
           </div>
         )}
+        <Button onClick={()=> history.push('/')}>Voltar a página inicial</Button>
       </aside>
       <Repo />
     </Container>
