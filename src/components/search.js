@@ -17,7 +17,7 @@ const Container = styled.div`
 
 const Box = styled.div`
   width: 60%;
-  height: 300px;
+  height: 250px;
   background: #d0d0d0;
   border-radius: 10px;
   font-style: normal;
@@ -28,6 +28,10 @@ const Box = styled.div`
   align-items: center;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 15px;
+  @media only screen and (min-width: 600px) {
+    width: 28%;
+    font-size: 20px;
+  }
 `;
 
 
@@ -42,6 +46,9 @@ const Button = styled.button`
   width: 50%;
   color: #ffff;
   margin-top: 20px;
+  @media only screen and (min-width: 600px) {
+    width: 30%;
+  }
 `;
 
 const Input = styled.input`
@@ -52,6 +59,9 @@ const Input = styled.input`
   border: none;
   border-radius: 3px;
   margin-top: 20px;
+  @media only screen and (min-width: 600px) {
+    font-size: 15px;
+  }
 `;
 
 function SearchUser() {
@@ -86,7 +96,7 @@ function SearchUser() {
     <Container>
       <Box>
         
-          <h2>Buscar repositório no Github</h2>
+          <h2 style={{marginTop: '10px'}}>Buscar repositório no Github</h2>
           <Input
             placeholder='Digite o nome do usuário'
             value={name}

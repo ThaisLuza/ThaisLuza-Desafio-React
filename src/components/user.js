@@ -3,14 +3,20 @@ import { useHistory } from 'react-router-dom';
 import styled from 'styled-components';
 import Repo from './repos';
 import ContextUser from '../context/ContextUser';
-import { AiOutlineMail, AiOutlineTeam } from 'react-icons/ai';
+import {
+  AiOutlineMail,
+  AiOutlineTeam,
+  AiOutlineEnvironment,
+  AiOutlineLink,
+} from 'react-icons/ai';
 
 const Container = styled.div`
   display: flex;
   font-family: Arial, Helvetica, sans-serif;
-  width: 100vw;
+  width: 90vw;
   color: #575a5d;
   justify-content: center;
+  margin: 0 10px;
 `;
 
 const Img = styled.img`
@@ -27,12 +33,19 @@ const Img = styled.img`
 const Name = styled.p`
   font-weight: bold;
   margin: 10px;
+  @media only screen and (min-width: 600px) {
+    font-size: 25px;
+  }
 `;
 
 const P = styled.p`
+  word-wrap: break-word;
   font-size: 15px;
   margin: 10px;
   color: #292d31;
+  @media only screen and (min-width: 600px) {
+    font-size: 16px;
+  }
 `;
 
 const Button = styled.button`
@@ -43,15 +56,14 @@ const Button = styled.button`
   transition: background 0.3s;
   border-radius: 5px;
   background: #fafbfc;
-  width: 100%;
+  width: 90%;
   color: #292d31;
-  margin: 0 auto;
+  margin: 0 10px;
 `;
 
 function User() {
   const history = useHistory();
   const [user, setUser] = useContext(ContextUser);
-  console.log(user);
   useEffect(() => {
     user.length === 0 && history.push('/');
   }, []);
@@ -73,12 +85,24 @@ function User() {
               <AiOutlineTeam /> {user.data.following} following
             </P>
 
+            {user.data.location && (
+              <P>
+                {' '}
+                <AiOutlineEnvironment /> {user.data.location}
+              </P>
+            )}
             {user.data.email && (
               <P>
                 {' '}
                 <AiOutlineMail /> {user.data.email}
               </P>
             )}
+            {/* {user.data.blog && (
+              <P>
+                {' '}
+                <AiOutlineLink /> {user.data.blog}
+              </P>
+            )} */}
           </div>
         )}
       </aside>

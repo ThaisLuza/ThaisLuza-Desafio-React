@@ -13,11 +13,12 @@ const Container = styled.div`
 `;
 const Titulo = styled.h2`
   font-weight: bold;
-  width: 120px;
+  width: 150px;
   margin: 20px;
   border-bottom: 3px solid orange;
   @media only screen and (min-width: 600px) {
     margin-top: 50px;
+    font-size: 20px;
   }
 `;
 
@@ -29,16 +30,19 @@ const ProjectName = styled.a`
   }
 `;
 const Description = styled.p`
-  font-size: 13px;
+  font-size: 14px;
   margin-bottom: 15px;
   @media only screen and (min-width: 600px) {
-    font-size: 15px;
+    font-size: 16px;
   }
 `;
 const P = styled.p`
   font-size: 13px;
   word-wrap: break-word;
   margin-bottom: 15px;
+  @media only screen and (min-width: 600px) {
+    font-size: 15px;
+  }
 `;
 
 const Card = styled.div`
@@ -71,8 +75,7 @@ function Repo() {
   return (
     <Container>
       <Titulo>
-        {' '}
-        <AiOutlineBook /> Repositories
+        <AiOutlineBook/> Repositories
       </Titulo>
       {repo &&
         repo.data.map((r, k) => (
