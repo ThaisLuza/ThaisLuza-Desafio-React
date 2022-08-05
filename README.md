@@ -13,6 +13,12 @@
 
 :eight_spoked_asterisk: Biblioteca usada para CSS foi Styled-components.  
 
+:eight_spoked_asterisk: Gerenciamento de estado: Context Api.  
+
+:eight_spoked_asterisk: API's utilizadas: API de busca de usuários do GitHub: https://api.github.com/users/username
+API de busca de repositórios do usuário pesquisado: https://api.github.com/users/username/repos
+
+
 
 É possível visualizar o projeto aqui : https://thaisluza-desafio-react-75nwco5i5-thaisluza.vercel.app/
 
